@@ -1,0 +1,82 @@
+{
+  "name": "stylelint-config-opensphere",
+  "description": "Stylelint config for OpenSphere.",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "author": "Kevin Schmidt <kschmidt@caci.com>",
+  "maintainers": [
+    "Kevin Schmidt <kschmidt@caci.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngageoint/stylelint-config-opensphere.git"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.1",
+    "stylelint-config-standard": "^23.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^8.0.1",
+    "@semantic-release/npm": "^8.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.2",
+    "husky": "^3.0.1",
+    "semantic-release": "^18.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=14.0.0"
+  },
+  "directories": {},
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "code",
+    "quality",
+    "style",
+    "lint",
+    "linter",
+    "stylelint",
+    "validate",
+    "code style",
+    "strict",
+    "check",
+    "checker",
+    "verify",
+    "enforce"
+  ],
+  "readme": "README.md",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
