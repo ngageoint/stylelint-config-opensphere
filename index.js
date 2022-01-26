@@ -41,6 +41,11 @@ module.exports = {
         /^ng-/
       ]
     }],
+    'value-keyword-case': ['lower', {
+      // Expect SVG keywords to be camel case.
+      // https://stylelint.io/user-guide/rules/list/value-keyword-case/#camelcasesvgkeywords-true--false-default-false
+      camelCaseSvgKeywords: true
+    }],
 
     // Order plugin rules
     "order/order": [
